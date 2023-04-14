@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Virtual</title>
+    <link rel = "stylesheet" type = "text/css" href = "style.css"/>
+    <link rel = "icon" href = "images/logo.png"/>
+    <script type = "text/javascript" src = "script.js"></script>
+    <script type = "text/javascript" src = "produtos.js"></script>
+</head>
+<body>
+    <div class = "shop-page">
+        <section class = "shop-section">
+            <div class = "shop-navigation-bar">
+                <nav class = "shop-nav open">
+                    <div class = "shop-nav-flex">
+                        <section class = "shop-nav-image-section">
+                            <a href = "" class = "shop-nav-link">
+                                <img id = "logo-image" src = "images/logo.png" alt = "logo">
+                                <h1 class = "logo-text">CEON</h1>
+                            </a>
+                        </section>
+                        <section class = "shop-nav-search-section">
+                            <form class = "shop-nav-form">
+                                <div class = "search-bar-div">
+                                    <input type = "text" name = "search-bar" id = "search-bar" placeholder = "Busque aqui o seu produto"/>
+                                </div>
+                                <div class = "search-button-div">
+                                    <button type =" button" name = "search-button" id = "search-button">
+                                        <img id = "search-image" src = "images/nav/img_lupa.png">
+                                    </button>
+                                </div>
+                            </form>
+                        </section>
+                        <section class = "shop-nav-cadastro-section">
+                            <div class = "cadastro-flex">
+                                <div class = "cadastro-image-div">
+                                    <img id = "cadastro-image" src = "https://cdn-icons-png.flaticon.com/512/1946/1946429.png">
+                                </div>
+                                <div class = "cadastro-button-div">
+                                    <button class = "cadastro-buttons">Login</button>
+                                </div>
+                                <div class = "cadastro-button-div">
+                                    <button class = "cadastro-buttons">Cadastre-se</button>
+                                </div>
+                            </div>
+                        </section>
+                        <section class = "shop-nav-carrinho-section">
+                            <div class = "carrinho-button-div">
+                                <button type = "button" id = "carrinho-button" onclick = "Carrinho()">
+                                    <img class = "pe-none" id = "carrinho-image" src = "images/nav/img_cart.png" alt = "carrinho"/>
+                                </button>
+                            </div>
+                        </section>
+                    </div>
+                    <button type = "button" class = "nav-buttons" onclick = "navBar()">
+                        <img class = "pe-none wd-50px" id = "nav-button-image" src = "images/nav/img_BarArrow(0).png" alt = "MenuArrow">
+                    </button>
+                </nav>
+            </div>
+            <div class = "carrinho-barra closed">
+                <p>CARRINHO BARRA LATERAL</p>
+            </div>
+            <div class = "shop-vitrine">
+                <div class = "shop-produtos" id = "shop-produtos-vitrine">
+                    <!-- Modelo de produtos
+                    <div class = "shop-produto dp-flex-column mw-20rem">
+                        <section class = "produto-image-section">
+                            <img class = "pe-none mw-10rem" src = "images/produtos/mobile/mobile(0).png" alt = "produto1">
+                        </section>
+                        <section class = "produto-title-section">
+                            <div class = "title-section-separator"></div>
+                            <div class = "title-div">
+                                <h4>Samsung Galaxy J10 Prime</h4>
+                            </div>
+                        </section>
+                        <section class = "produto-rate-section">
+                            <div class = "stars-flex">
+                                <img src = "images/icons/img_star(1).png" alt = "star" class = "stars pe-none"/>
+                                <img src = "images/icons/img_star(1).png" alt = "star" class = "stars pe-none"/>
+                                <img src = "images/icons/img_star(1).png" alt = "star" class = "stars pe-none"/>
+                                <img src = "images/icons/img_star(1).png" alt = "star" class = "stars pe-none"/>
+                                <img src = "images/icons/img_star(1).png" alt = "star" class = "stars pe-none"/>
+                            </div>
+                            <div class = "rating-div">
+                                <p class = "rating-texts ta-justify">50 avaliações</p>
+                            </div>
+                        </section>
+                        <section class = "produto-price-section">
+                            <p class = "produto-price-texts ta-justify">R$ 1.100,00</p>
+                        </section>
+                        <section class = "produto-button-section">
+                            <button class = "produto-button ta-justify">Adicionar ao carrinho</p>
+                        </section>
+                    </div>
+                    -->
+                    <script>
+                        addProducts();
+                    </script>
+                </div>
+            </div>
+            <div class = "shop-footer-div">
+                <footer class = "footer-bar">
+                    <div class = "footer-flex">
+                        <div class = "footer-logo">
+                            <img id = "logo-image" src = "images/logo.png">
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

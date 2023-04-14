@@ -1,0 +1,371 @@
+/* Predefinições da página */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Arial,  sans-serif;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    pointer-events: none;
+}
+
+.dp-flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dp-flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.mw-20rem {
+    max-width: 20rem;
+}
+
+.mw-10rem {
+    max-width: 10rem;
+}
+
+.mw-5rem {
+    max-width: 5rem;
+}
+
+.wd-50px {
+    width: 50px;
+}
+
+/* Todos os textos com esta classe serão justificados */
+.ta-justify {
+    text-align: justify;
+}
+
+/* Todas as imagens que possuirem esta classe, não poderão ser arrastadas na página */
+.pe-none {
+    pointer-events: none;
+}
+
+.pos-left {
+    position: relative;
+    left: 1rem;
+}
+
+/* Barra de navegação */
+
+.shop-navigation-bar {
+    width: 100%;
+}
+
+.shop-nav {
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 10vh;
+    display: fixed;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 10px 15px;
+    transition: all 0.3s;
+    z-index: 1;
+}
+
+.shop-nav.closed {
+    transform: translateY(-9.5vh);
+    opacity: 0.7;
+}
+
+.shop-nav-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Alinhar logo na barra de navegação */
+.shop-nav-image-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Alinhar logo e título */
+.shop-nav-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* Imagem da logo */
+#logo-image {
+    width: 30px;
+    pointer-events: none;
+}
+
+/* Texto da logo */
+.logo-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Barra de pesquisa */
+
+.shop-nav-search-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.shop-nav-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.search-bar-div {
+    width: 100%;
+    padding: 10px 5px;
+    border: 0px;
+    border-radius: 10px;
+}
+
+#search-bar {
+    width: 15rem;
+    max-width: 15rem;
+    min-width: 10rem;
+    height: 1.2rem;
+    text-align: justify;
+    padding: 10px 5px;
+    border: 0px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 10px 15px;
+}
+
+#search-button {
+    background-color: transparent;
+    border: 0;
+}
+
+#search-button:hover {
+    cursor: pointer;
+}
+
+#search-image {
+    width: 20px;
+}
+
+/* Cadastro */
+.cadastro-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#cadastro-image {
+    width: 40px;
+}
+
+/* Botões de cadastro */
+.cadastro-buttons {
+    width: 6rem;
+    height: 2.5rem;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: transparent;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #808080;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.cadastro-buttons:hover {
+    cursor: pointer;
+    filter:invert(0.2);
+}
+
+/* Carrinho */
+#carrinho-button {
+    width: 30px;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid rgb(30, 30, 30);
+}
+
+#carrinho-button:hover {
+    cursor: pointer;
+}
+
+/* Imagem do carrinho */
+#carrinho-image {
+    width: 20px;
+}
+
+/* Botão de abrir/fechar a barra de navegação */
+.nav-buttons {
+    background-color: #000;
+    border-width: 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.nav-buttons:hover {
+    cursor: pointer;
+}
+
+/* Imagem de seta do botão */
+#nav-button-image {
+    width: 20px;
+    transition: all 0.2s;
+    padding: 5px 20px;
+}
+
+/* Aba do carrinho */
+.carrinho-barra {
+    position: fixed;
+    background-color: #fff;
+    right: 0%;
+    height: 70vh;
+    transition: all 0.3s;
+}
+
+/* Aba do carrinho aberta */
+.carrinho-barra.open {
+    background-color: #fff;
+}
+
+/* Aba do carrinho fechada */
+.carrinho-barra.closed {
+    opacity: 0;
+    right: -20%;
+}
+
+/* Principal (Vitrine) */
+body {
+    background-color: #f0f0f0;
+}
+
+/* Alinhar produtos */
+.shop-produtos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+/* Barra de produtos */
+.shop-produto {
+    width: 12.5rem;
+    max-width: 20rem;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px;
+    border-radius: 15px;
+}
+
+.shop-produto:hover {
+    cursor: pointer;
+}
+
+/* Section da imagem do produto */
+.produto-image-section {
+    max-width: 10rem;
+    margin: 15px;
+}
+
+/* Section do título do produto */
+.title-section-separator { /* Separar imagem do título */
+    height: 20px;
+}
+
+.title-div {
+    margin: auto;
+}
+
+/*Alinnhar estrelas e total de avaliações */
+.produto-rate-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 15px 0px;
+}
+
+/* Alinhar estrelas */
+.stars-flex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Div das avaliações */
+.rating-div {
+    margin-left: 5px;
+}
+
+/* Estrelas do produto */
+.stars {
+    width: 15px;
+}
+
+/* Total de avaliações */
+.rating-texts {
+    font-size: 10pt;
+    color:rgb(150, 150, 150);
+}
+
+/* Section do preço do produto */
+.produto-price-section {
+    margin: 10px 0px;
+}
+
+/* Texto do preço do produto */
+.produto-price-texts {
+    font-size: 12pt;
+    font-weight: 700;
+}
+
+/* Section do botão (adicionar ao carrinho) do produto */
+.produto-button-section {
+    margin: 10px 0px;
+}
+
+/* Botão de adicionar ao carrinho */
+.produto-button {
+    width: 10rem;
+    height: 2rem;
+    text-align: center;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px;
+    border: 1px solid #a0a0a0;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.produto-button:hover {
+    cursor: pointer;
+    filter: brightness(0.9);
+}
+
+/* Rodapé */
+.shop-footer-div {
+    width: 100%;
+    background-color: black;
+}
