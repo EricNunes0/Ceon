@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja Virtual</title>
+    <title>CEON</title>
     <link rel = "stylesheet" type = "text/css" href = "style.css"/>
     <link rel = "icon" href = "images/logo.png"/>
     <script type = "text/javascript" src = "script.js"></script>
     <script type = "text/javascript" src = "produtos.js"></script>
+    <script type = "text/javascript" src = "search.js"></script>
 </head>
 <body>
     <div class = "shop-page">
@@ -25,7 +26,7 @@
                         <section class = "shop-nav-search-section">
                             <form class = "shop-nav-form">
                                 <div class = "search-bar-div">
-                                    <input type = "text" name = "search-bar" id = "search-bar" placeholder = "Busque aqui o seu produto"/>
+                                    <input type = "text" name = "search-bar" id = "search-bar" onkeyup = "searchProduct()" placeholder = "Busque aqui o seu produto" required/>
                                 </div>
                                 <div class = "search-button-div">
                                     <button type =" button" name = "search-button" id = "search-button">
@@ -36,9 +37,6 @@
                         </section>
                         <section class = "shop-nav-cadastro-section">
                             <div class = "cadastro-flex">
-                                <div class = "cadastro-image-div">
-                                    <img id = "cadastro-image" src = "https://cdn-icons-png.flaticon.com/512/1946/1946429.png">
-                                </div>
                                 <div class = "cadastro-button-div">
                                     <button class = "cadastro-buttons">Login</button>
                                 </div>
@@ -51,6 +49,7 @@
                             <div class = "carrinho-button-div">
                                 <button type = "button" id = "carrinho-button" onclick = "Carrinho()">
                                     <img class = "pe-none" id = "carrinho-image" src = "images/nav/img_cart.png" alt = "carrinho"/>
+                                    <span id = "carrinho-count">0</span>
                                 </button>
                             </div>
                         </section>
@@ -60,42 +59,13 @@
                     </button>
                 </nav>
             </div>
-            <div class = "carrinho-barra closed">
-                <p>CARRINHO BARRA LATERAL</p>
+            <div class = "carrinho-barra closed" id = "carrinho-barra-lateral">
+                <h4>Produtos no carrinho</h4>
+                <h5 id = "total-price">Total: R$0,00</h5>
+                <button class = "carrinho-empty-button" onclick = "cleanCart()">Esvaziar</button>
             </div>
             <div class = "shop-vitrine">
                 <div class = "shop-produtos" id = "shop-produtos-vitrine">
-                    <!-- Modelo de produtos
-                    <div class = "shop-produto dp-flex-column mw-20rem">
-                        <section class = "produto-image-section">
-                            <img class = "pe-none mw-10rem" src = "images/produtos/mobile/mobile(0).png" alt = "produto1">
-                        </section>
-                        <section class = "produto-title-section">
-                            <div class = "title-section-separator"></div>
-                            <div class = "title-div">
-                                <h4>Samsung Galaxy J10 Prime</h4>
-                            </div>
-                        </section>
-                        <section class = "produto-rate-section">
-                            <div class = "stars-flex">
-                                <img src = "images/icons/img_star(1).png" alt = "star" class = "stars pe-none"/>
-                                <img src = "images/icons/img_star(1).png" alt = "star" class = "stars pe-none"/>
-                                <img src = "images/icons/img_star(1).png" alt = "star" class = "stars pe-none"/>
-                                <img src = "images/icons/img_star(1).png" alt = "star" class = "stars pe-none"/>
-                                <img src = "images/icons/img_star(1).png" alt = "star" class = "stars pe-none"/>
-                            </div>
-                            <div class = "rating-div">
-                                <p class = "rating-texts ta-justify">50 avaliações</p>
-                            </div>
-                        </section>
-                        <section class = "produto-price-section">
-                            <p class = "produto-price-texts ta-justify">R$ 1.100,00</p>
-                        </section>
-                        <section class = "produto-button-section">
-                            <button class = "produto-button ta-justify">Adicionar ao carrinho</p>
-                        </section>
-                    </div>
-                    -->
                     <script>
                         addProducts();
                     </script>
@@ -104,8 +74,18 @@
             <div class = "shop-footer-div">
                 <footer class = "footer-bar">
                     <div class = "footer-flex">
-                        <div class = "footer-logo">
-                            <img id = "logo-image" src = "images/logo.png">
+                        <div class = "footer-estacio">
+                            <div class = "footer-estacio-logo-div">
+                                <img id = "estacio-logo-image" src = "https://adminconsultor.estacio.br/assets/images/logos/Estacio_09_H_Luxo_cor.png">
+                            </div>
+                        </div>
+                        <div class = "footer-ceon">
+                            <div class = "footer-logo">
+                                <img id = "logo-image" src = "images/logo.png">
+                            </div>
+                            <div class = "footer-logotext">
+                                <h3 id = "logo-text">CEON</h3>
+                            </div>
                         </div>
                     </div>
                 </footer>

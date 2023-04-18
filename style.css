@@ -15,6 +15,10 @@ img {
     pointer-events: none;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 .dp-flex-column {
     display: flex;
     flex-direction: column;
@@ -67,10 +71,10 @@ img {
 }
 
 .shop-nav {
-    background-color: rgb(0, 0, 0);
     width: 100%;
-    height: 10vh;
-    display: fixed;
+    height: 80px;
+    background-color: rgb(0, 0, 0);
+    position: relative;
     justify-content: center;
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 10px 15px;
@@ -79,11 +83,12 @@ img {
 }
 
 .shop-nav.closed {
-    transform: translateY(-9.5vh);
+    transform: translateY(-78px);
     opacity: 0.7;
 }
 
 .shop-nav-flex {
+    height: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -175,6 +180,7 @@ img {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
 }
 
 #cadastro-image {
@@ -185,7 +191,7 @@ img {
 .cadastro-buttons {
     width: 6rem;
     height: 2.5rem;
-    color: #fff;
+    color: #d0d0d0;
     font-size: 14px;
     font-weight: 600;
     background-color: transparent;
@@ -201,9 +207,25 @@ img {
     filter:invert(0.2);
 }
 
+/* Div do carrinho e contador de produtos */
+.carrinho-button-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrinho-button-div span {
+    color: #fff
+}
+
 /* Carrinho */
 #carrinho-button {
-    width: 30px;
+    width: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     background-color: transparent;
     border-radius: 4px;
     border: 1px solid rgb(30, 30, 30);
@@ -234,27 +256,46 @@ img {
 #nav-button-image {
     width: 20px;
     transition: all 0.2s;
-    padding: 5px 20px;
+    padding: 4px 20px;
 }
 
 /* Aba do carrinho */
 .carrinho-barra {
+    width: 15rem;
+    height: 70vh;
     position: fixed;
     background-color: #fff;
+    border: 1px solid #c0c0c0;
+    writing-mode: horizontal-tb;
     right: 0%;
-    height: 70vh;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px;
     transition: all 0.3s;
 }
 
 /* Aba do carrinho aberta */
 .carrinho-barra.open {
-    background-color: #fff;
+    border-bottom-left-radius: 5px;
+    overflow: auto;
 }
 
 /* Aba do carrinho fechada */
 .carrinho-barra.closed {
     opacity: 0;
     right: -20%;
+}
+
+/* Botão de esvaziar carrinho */
+.carrinho-empty-button {
+    height: 30px;
+    width: 80px;
+    background-color: transparent;
+    border: 1px solid #f0f0f0;
+    box-shadow: rgba(0, 0, 0, 0.03) 0px 10px 15px;
+    transition: all 0.3s;
+}
+
+.carrinho-empty-button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 /* Principal (Vitrine) */
@@ -269,6 +310,7 @@ body {
     align-items: center;
     justify-content: space-around;
     margin: 20px 0;
+    gap: 1rem;
 }
 
 /* Barra de produtos */
@@ -282,6 +324,14 @@ body {
 
 .shop-produto:hover {
     cursor: pointer;
+}
+
+/* Nome dos produtos */
+.produto-names {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
 }
 
 /* Section da imagem do produto */
@@ -364,8 +414,104 @@ body {
     filter: brightness(0.9);
 }
 
-/* Rodapé */
+/* Rodapé (footer) */
 .shop-footer-div {
     width: 100%;
+    height: 100px;
     background-color: black;
+}
+
+/* Barra do footer */
+.footer-bar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Alinhar footer */
+.footer-flex {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* Logo da Estácio */
+#estacio-logo-image {
+    width: 10rem;
+}
+
+/* Texto da logo no rodapé*/
+#logo-text {
+    color: #fff;
+}
+
+/* CONFIGURAÇÕES DO CARRINHO */
+.carrinho-products {
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.carrinho-products:hover {
+    background-color: #e0e0e0;
+}
+
+/* Imagem do produto no carrinho */
+.carrinho-product-images {
+    width: 40px;
+    height: 40px;
+    padding: 2px;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+}
+
+/* Alinhar nome e preço do produto no carrinho */
+.carrinho-texts-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Nome dos produtos no carrinho */
+.carrinho-product-titles {
+    font-size: 10pt;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+}
+
+/* Preço dos produtos no carrinho */
+.carrinho-product-prices {
+    font-size: 10pt;
+    font-weight: 600;
+}
+
+/* Botão de remover produto do carrinho */
+.carrinho-product-buttons {
+    font-size: 7pt;
+    background-color: transparent;
+    width: 60px;
+    height: 20px;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.carrinho-product-buttons:hover {
+    background-color: rgba(200, 0, 0, 0.1);
+}
+
+.carrinho-product-buttons:active {
+    background-color: rgba(200, 0, 0, 0.3);
 }
