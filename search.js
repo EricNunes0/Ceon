@@ -11,3 +11,20 @@ function searchProduct() {
         };
     }
 }
+
+function filterProductsByCategorie(categorie) {
+    let produtosBars = document.querySelectorAll('.shop-produto');
+    let produtos = document.getElementsByClassName('produto-categories');
+    for(let i = 0; i <= produtos.length - 1; i++) {
+        let txtValue = produtos[i].textContent;
+        if(categorie) {
+            if(txtValue == categorie) {
+                produtosBars[i].style.display = "";
+            } else {
+                produtosBars[i].style.display = "none";
+            };
+        } else {
+            produtosBars[i].style.display = "";
+        };
+    }
+}

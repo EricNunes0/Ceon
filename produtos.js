@@ -47,16 +47,78 @@ const products = [
         "price": 599.00,
         "rating": 38
     },
-    /*{
-        "id": 4,
+    {
+        "id": 6,
         "name": "Aquecedor elétrico doméstico ventisol quartzo portátil AQ-01 127V",
         "categorie": "E", // "E" = "Eletrodomésticos",
-        "image": "images/produtos/eletrodomesticos/eletro(0).png",
+        "image": "https://i.imgur.com/CcfcywL.png",
         "price": 92.70,
         "rating": 23
-    }*/
+    },
+    {
+        "id": 7,
+        "name": "Geladeira/Refrigerador Electrolux DC35A Branca 260L Cycle Defrost - 110v",
+        "categorie": "E", // "E" = "Eletrodomésticos",
+        "image": "https://i.imgur.com/p2Ng4mA.png",
+        "price": 2093.54,
+        "rating": 1208
+    },
+    {
+        "id": 8,
+        "name": "Lavadora de Roupas Electrolux 11Kg LES11 Essencial Care Branca - 110V",
+        "categorie": "E", // "E" = "Eletrodomésticos",
+        "image": "https://i.imgur.com/BKvVG3N.png",
+        "price": 1761.78,
+        "rating": 2154
+    },
+    {
+        "id": 9,
+        "name": "Fone de ouvido bluetooth tws drop, Branco, PH368, Pulse - UN 1 UN",
+        "categorie": "I", // "I" = "Informática",
+        "image": "https://i.imgur.com/aJs7RFp.png",
+        "price": 127.80,
+        "rating": 14
+    },
+    {
+        "id": 10,
+        "name": "Carregador portátil usb para Smartphone, 10000mAh, CB147, Pulse - CX 1 UN",
+        "categorie": "I", // "I" = "Informática",
+        "image": "https://i.imgur.com/FMBaMFa.png",
+        "price": 119.90,
+        "rating": 5
+    },
+    {
+        "id": 11,
+        "name": "Case Capinha Transparente Capa Slim Flexível Invisível Compatível Com iPhone 7G, 7G Plus, X, XR, XS MAX, 11 PRO MAX, 12, 12 PRO MAX, 13 Pro (11)",
+        "categorie": "A", // "A" = "Acessórios",
+        "image": "https://i.imgur.com/dBF5ug1.png",
+        "price": 27.89,
+        "rating": 359
+    }
 ]
 
+const categories = {
+    "M": {
+        "name": "Celulares",
+        "icon": "https://i.imgur.com/lOL87xU.png",
+        "bgcolor": "#3060ff"
+    },
+    "E": {
+        "name": "Eletrodomésticos",
+        "icon": "https://i.imgur.com/Mj0RNer.png",
+        "bgcolor": "#ffb030"
+    },
+    "I": {
+        "name": "Informática",
+        "icon": "https://i.imgur.com/43xB3Zf.png",
+        "bgcolor": "#30c060"
+    },
+    "A": {
+        "name": "Acessórios",
+        "icon": "https://i.imgur.com/23dWz9P.png",
+        "bgcolor": "#ff3060"
+    }
+};
 
 function addProducts() {
     let vitrine = document.querySelector('#shop-produtos-vitrine');
@@ -65,13 +127,18 @@ function addProducts() {
         out += `
         <div class = "shop-produto dp-flex-column mw-20rem">
             <section class = "produto-image-section">
-                <img class = "pe-none mw-10rem" src = "${product.image}" alt = "produto">
+                <img class = "produto-image pe-none mw-10rem" src = "${product.image}" alt = "produto">
             </section>
             <section class = "produto-title-section">
                 <div class = "title-section-separator"></div>
                 <div class = "title-div">
                     <h4 class = "produto-names">${product.name}</h4>
+                    <h4 class = "produto-categories" style = "display: none;">${product.categorie}</h4>
                 </div>
+            </section>
+            <section class = "produto-icon-sections" style = "background-color: ${categories[product.categorie].bgcolor};">
+                <img src = "${categories[product.categorie].icon}" alt = "product-categorie-icon" class = "product-categorie-icons" id = "product-categorie-icon-${product.id}"></img>
+                <p class = "product-categorie-names" id = "product-categorie-name-${product.id}">${categories[product.categorie].name}</p>
             </section>
             <section class = "produto-rate-section">
                 <div class = "stars-flex">
@@ -143,6 +210,7 @@ function updatePrice() {
 /* Altera o contador do carrinho */
 function updateCounter() {
     let pCount = document.querySelectorAll(`.carrinho-products`).length;
+    pCount > 99 ? pCount = `+99`: pCount = pCount;
     document.querySelector('#carrinho-count').innerHTML = pCount;
 }
 
