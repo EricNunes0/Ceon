@@ -12,6 +12,7 @@ function searchProduct() {
     }
 }
 
+/* Filtrar produtos por categoria */
 function filterProductsByCategorie(categorie) {
     let produtosBars = document.querySelectorAll('.shop-produto');
     let produtos = document.getElementsByClassName('produto-categories');

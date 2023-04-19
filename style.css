@@ -33,6 +33,10 @@ button:hover {
     justify-content: center;
 }
 
+.margin-0 {
+    margin: 0;
+}
+
 .mw-20rem {
     max-width: 20rem;
 }
@@ -208,8 +212,14 @@ button:hover {
     filter:invert(0.2);
 }
 
+/* Div do carrinho */
+.shop-nav-carrinho-section {
+    height: 40px;
+}
+
 /* Div do carrinho e contador de produtos */
 .carrinho-button-div {
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -217,12 +227,15 @@ button:hover {
 }
 
 .carrinho-button-div span {
-    color: #fff
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10pt;
 }
 
 /* Carrinho */
 #carrinho-button {
     width: 40px;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -320,7 +333,7 @@ button:hover {
     height: 70vh;
     position: fixed;
     background-color: #fff;
-    border: 1px solid #c0c0c0;
+    border: 1px solid #d0d0d0;
     writing-mode: horizontal-tb;
     right: 0%;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px;
@@ -329,7 +342,7 @@ button:hover {
 
 /* Aba do carrinho aberta */
 .carrinho-barra.open {
-    border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 30px;
     overflow: auto;
     z-index: 1;
 }
@@ -427,7 +440,7 @@ body {
 
 /* Section do título do produto */
 .title-section-separator { /* Separar imagem do título */
-    height: 20px;
+    height: 10px;
 }
 
 .title-div {
@@ -466,9 +479,39 @@ body {
     color:rgb(150, 150, 150);
 }
 
+/* Section do desconto do produto */
+.produto-discount-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+
+/* Texto do desconto do produto */
+.produto-discount-texts {
+    color: #808080;
+    font-size: 10pt;
+    text-decoration: line-through;
+}
+
+/* Span da porcentagem do desconto */
+.produto-discount-spans {
+    background-color: #30a060;
+    color: #fff;
+    padding: 2px;
+    border-radius: 5px;
+    font-size: 10pt;
+}
+
 /* Section do preço do produto */
 .produto-price-section {
     margin: 10px 0px;
+}
+
+.produto-price-section.margin-0 {
+    margin: 0;
 }
 
 /* Texto do preço do produto */
@@ -486,6 +529,7 @@ body {
 .produto-button {
     width: 10rem;
     height: 2rem;
+    position: relative;
     text-align: center;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px;
@@ -497,6 +541,19 @@ body {
 .produto-button:hover {
     cursor: pointer;
     filter: brightness(0.9);
+}
+
+.produto-button:active {
+    filter: brightness(0.8);
+}
+
+.produto-button::after {
+    content: "Adicionar ao carrinho"
+}
+
+.produto-button:focus:after {
+    content: "Adicionado!";
+    filter: brightness(0.7);
 }
 
 /* Rodapé (footer) */
@@ -544,6 +601,7 @@ body {
     align-items: center;
     justify-content: space-around;
     border-bottom: 1px solid #d0d0d0;
+    transition: all 0.1s;
 }
 
 .carrinho-products:hover {

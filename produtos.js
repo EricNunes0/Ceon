@@ -13,7 +13,8 @@ const products = [
         "categorie": "M", // "M" = "Mobile",
         "image": "https://i.imgur.com/8uRA6oi.png",
         "price": 1151.10,
-        "rating": 97
+        "rating": 97,
+        "discount": 10
     },
     {
         "id": 2,
@@ -61,7 +62,8 @@ const products = [
         "categorie": "E", // "E" = "Eletrodomésticos",
         "image": "https://i.imgur.com/p2Ng4mA.png",
         "price": 2093.54,
-        "rating": 1208
+        "rating": 1208,
+        "discount": 10,
     },
     {
         "id": 8,
@@ -77,7 +79,8 @@ const products = [
         "categorie": "I", // "I" = "Informática",
         "image": "https://i.imgur.com/aJs7RFp.png",
         "price": 127.80,
-        "rating": 14
+        "rating": 14,
+        "discount": 5
     },
     {
         "id": 10,
@@ -124,6 +127,17 @@ function addProducts() {
     let vitrine = document.querySelector('#shop-produtos-vitrine');
     let out = "";
     for(const product of products) {
+        let priceValue = product.price, discountDiv = "", productNameStyle = "";
+        if(product.discount) {
+            priceValue = product.price - ((product.price * product.discount) / 100);
+            discountDiv = product.discount;
+            discountDiv = `
+            <section class = "produto-discount-section">
+                <p class = "produto-discount-texts ta-justify">${product.price.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</p>
+                <span class = "produto-discount-spans">${product.discount}%</span>
+            </section>`;
+            productNameStyle = "margin-0";
+        }
         out += `
         <div class = "shop-produto dp-flex-column mw-20rem">
             <section class = "produto-image-section">
@@ -152,11 +166,12 @@ function addProducts() {
                     <p class = "rating-texts ta-justify">${product.rating} avaliações</p>
                 </div>
             </section>
-            <section class = "produto-price-section">
-                <p class = "produto-price-texts ta-justify">${product.price.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</p>
+            ${discountDiv}
+            <section class = "produto-price-section ${productNameStyle}" id = "produto-price-section-${product.id}">
+                <p class = "produto-price-texts ta-justify">${priceValue.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</p>
             </section>
             <section class = "produto-button-section">
-                <button class = "produto-button ta-justify" onclick = "addToCart(${product.id})">Adicionar ao carrinho</p>
+                <button class = "produto-button ta-justify" onclick = "addToCart(${product.id})"></p>
             </section>
         </div>
         `
@@ -173,6 +188,10 @@ function addToCart(id) {
             foundProduct = product;
         }
     }
+    let productPrice = foundProduct.price;
+    if(foundProduct.discount) {
+        productPrice = productPrice - ((productPrice * foundProduct.discount) / 100);
+    }
     let lateralBar = document.getElementById('carrinho-barra-lateral');
     lateralBar.innerHTML += `
         <div class = "carrinho-products" id = "carrinho-product-${divId}">
@@ -184,8 +203,8 @@ function addToCart(id) {
                     <p class = "carrinho-product-titles">${foundProduct.name}</p>
                 </div>
                 <div class = "carrinho-price-div">
-                    <span class = "carrinho-prices" style = "display: none;">${foundProduct.price}</span>
-                    <p class = "carrinho-product-prices">${foundProduct.price.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</p>
+                    <span class = "carrinho-prices" style = "display: none;">${productPrice}</span>
+                    <p class = "carrinho-product-prices">${productPrice.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</p>
                 </div>
                 <div class = "carrinho-button-div">
                     <button type = "button" class = "carrinho-product-buttons" id = "carrinho-product-button-${divId}" onclick = "deleteFromCart(${divId})">Remover</button>

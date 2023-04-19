@@ -22,6 +22,7 @@ function navBar() {
     }
 };
 
+/* Abrir/fechar carrinho */
 function Carrinho() {
     const barraCarrinhos = document.getElementsByClassName('carrinho-barra');
     const carrinho = document.getElementById('carrinho-button');
