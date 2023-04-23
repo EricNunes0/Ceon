@@ -1,0 +1,209 @@
+:root {
+    --font-family-verdana: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Página inteira de login */
+.login-page {
+    background-image: linear-gradient(90deg, rgb(40, 220, 220) 0%, rgb(220, 40, 220) 100%);
+    background-size: cover;
+    margin: 0;
+}
+
+/* Barra de navegação da página de login */
+.login-nav {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: rgb(5, 5, 20);
+    margin: 0;
+}
+
+.login-nav-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    text-decoration: none;
+}
+
+/* Imagem da logo */
+#logo-image {
+    width: 30px;
+    pointer-events: none;
+}
+
+/* Texto da logo */
+.logo-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Área de login */
+.login-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 28rem;
+    background-color: white;
+    border-radius: 10px;
+    margin: 1rem auto;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 15px;
+}
+
+/* H2 da página */
+.login-title {
+    color: #303030;
+    text-align: center;
+    font-size: 28pt;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 1rem 0;
+}
+
+/* Linha para separar textos */
+.login-separator {
+    width: 99%;
+}
+
+/* Descrição da página */
+.login-description {
+    text-align: center;
+    font-size: 10pt;
+    font-family: var(--font-family-verdana);
+    color: #606060;
+    margin: 1rem 0;
+}
+
+/* Div do formulário de cadastro */
+.login-form-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Formulário */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Div do input e label */
+.login-inputs-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Labels do login */
+.login-labels {
+    color: #606060;
+    font-size: 12pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Asterisco de campo obrigatório */
+.login-required-span {
+    color: #f00;
+    font-size: 8pt;
+}
+
+/* Divs dos inputs do formulário */
+.login-input-divs {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-input-divs span {
+    color: #f00;
+    font-size: 8pt;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 10px 0 0 0;
+}
+
+/* "É necessário informar um e-mail!" */
+#login-required-email {
+    display: none;
+}
+
+/* "É necessário informar uma senha!" */
+#login-required-password {
+    display: none;
+}
+
+/* Inputs do login */
+.login-inputs {
+    width: 20rem;
+    height: 3rem;
+    padding: 0 0.5rem;
+    border: 1px solid #a0a0a0;
+    border-radius: 8px;
+    font-size: 14pt;
+}
+
+.login-inputs:focus {
+    outline: none;
+    border: 1px solid #3060ff;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 5px;
+}
+
+/* Botão de input da senha */
+.password-button {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 0px solid;
+    border-radius: 25px;
+    transform: translate3d(300px, 10px, 0);
+}
+
+.password-button:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.password-button:active {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Imagem do input de senha */
+.password-icon {
+    position: absolute;
+    top: 5px;
+    left: 1px;
+    width: 28px;
+    height: 20px;
+    filter: invert(0.5);
+}
+
+/* Botão de submit do login */
+#input-submit-button {
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(10, 10, 20, 1);
+    color: #fff;
+    font-size: 12pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    border: 1px solid #a0a0a0;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+#input-submit-button:hover {
+    cursor: pointer;
+    filter: invert(0.1);
+}

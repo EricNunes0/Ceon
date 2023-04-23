@@ -26,14 +26,6 @@ const products = [
     },
     {
         "id": 3,
-        "name": "Motorola G52 128GB, 4G RAM",
-        "categorie": "M", // "M" = "Mobile",
-        "image": "https://i.imgur.com/xuAGigr.png",
-        "price": 1104.15,
-        "rating": 78
-    },
-    {
-        "id": 4,
         "name": "Samsung Galaxy M53 5G 128GB Azul, 8GB de RAM, Processador Octa-Core",
         "categorie": "M", // "M" = "Mobile",
         "image": "https://i.imgur.com/REDgvOv.png",
@@ -41,12 +33,21 @@ const products = [
         "rating": 243
     },
     {
-        "id": 5,
+        "id": 4,
         "name": "Samsung Galaxy A03 Core Preto 32GB, 2GB RAM",
         "categorie": "M", // "M" = "Mobile",
         "image": "https://i.imgur.com/eGeGkVs.png",
         "price": 599.00,
         "rating": 38
+    },
+    {
+        "id": 5,
+        "name": "Motorola G52 128GB, 4G RAM",
+        "categorie": "M", // "M" = "Mobile",
+        "image": "https://i.imgur.com/xuAGigr.png",
+        "price": 1104.15,
+        "rating": 78,
+        "discount": 10
     },
     {
         "id": 6,
@@ -75,6 +76,33 @@ const products = [
     },
     {
         "id": 9,
+        "name": "Fogão de Piso com Acendimento Manual Star Clean 4 Bocas Itatiaia",
+        "categorie": "E", // "E" = "Eletrodomésticos",
+        "image": "https://i.imgur.com/vL3c7Ju.png",
+        "price": 613.52,
+        "rating": 142,
+        "discount": 10,
+    },
+    {
+        "id": 10,
+        "name": "Micro-ondas Philco PMO23BB 20 Litros Multifunções Limpa Fácil - 110v",
+        "categorie": "E", // "E" = "Eletrodomésticos",
+        "image": "https://i.imgur.com/64FujOH.png",
+        "price": 590.00,
+        "rating": 111,
+        "discount": 10,
+    },
+    {
+        "id": 11,
+        "name": "Lava E Seca Midea Storm Wash Inverter Tambor 4D Midea Branca 11Kg 127V LSD11B1",
+        "categorie": "E", // "E" = "Eletrodomésticos",
+        "image": "https://i.imgur.com/hrqkvS2.png",
+        "price": 3435.00,
+        "rating": 9,
+        "discount": 10,
+    },
+    {
+        "id": 12,
         "name": "Fone de ouvido bluetooth tws drop, Branco, PH368, Pulse - UN 1 UN",
         "categorie": "I", // "I" = "Informática",
         "image": "https://i.imgur.com/aJs7RFp.png",
@@ -83,7 +111,7 @@ const products = [
         "discount": 5
     },
     {
-        "id": 10,
+        "id": 13,
         "name": "Carregador portátil usb para Smartphone, 10000mAh, CB147, Pulse - CX 1 UN",
         "categorie": "I", // "I" = "Informática",
         "image": "https://i.imgur.com/FMBaMFa.png",
@@ -91,12 +119,38 @@ const products = [
         "rating": 5
     },
     {
-        "id": 11,
+        "id": 14,
+        "name": "Notebook Compaq 420 Intel Pentium-N3700 4GB 120GB SSD Led Webcam HD W10 14,1'' Cinza + Office 365",
+        "categorie": "I", // "I" = "Informática",
+        "image": "https://i.imgur.com/PNvpZQw.png",
+        "price": 1349.90,
+        "rating": 499
+    },
+    {
+        "id": 15,
         "name": "Case Capinha Transparente Capa Slim Flexível Invisível Compatível Com iPhone 7G, 7G Plus, X, XR, XS MAX, 11 PRO MAX, 12, 12 PRO MAX, 13 Pro (11)",
         "categorie": "A", // "A" = "Acessórios",
         "image": "https://i.imgur.com/dBF5ug1.png",
         "price": 27.89,
         "rating": 359
+    },
+    {
+        "id": 16,
+        "name": "Smart TV LED 32 HD Philco com Dolby Audio Midia Cast e Processador Quad-core",
+        "categorie": "T", // "T" = "TV",
+        "image": "https://i.imgur.com/3DaAXjS.png",
+        "price": 1122.35,
+        "rating": 2072,
+        "discount": 2
+    },
+    {
+        "id": 17,
+        "name": "Smart TV 50\" UHD 4K Samsung 50AU7700 Processador Crystal 4K Tela sem limites Visual Livre de Cabos Alexa built in Controle Único",
+        "categorie": "T", // "T" = "TV",
+        "image": "https://i.imgur.com/nYtP7hy.png",
+        "price": 2159.99,
+        "rating": 2192,
+        "discount": 5
     }
 ]
 
@@ -120,8 +174,17 @@ const categories = {
         "name": "Acessórios",
         "icon": "https://i.imgur.com/23dWz9P.png",
         "bgcolor": "#ff3060"
+    },
+    "T": {
+        "name": "TV",
+        "icon": "https://i.imgur.com/QQBMBNo.png",
+        "bgcolor": "#9030ff"
     }
 };
+
+const starsImages = [
+    "https://i.imgur.com/ssDiu1t.png", "https://i.imgur.com/JECZraP.png"
+]
 
 function addProducts() {
     let vitrine = document.querySelector('#shop-produtos-vitrine');
@@ -134,7 +197,10 @@ function addProducts() {
             discountDiv = `
             <section class = "produto-discount-section">
                 <p class = "produto-discount-texts ta-justify">${product.price.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</p>
-                <span class = "produto-discount-spans">${product.discount}%</span>
+                <span class = "produto-discount-spans">
+                    <img src = "https://i.imgur.com/HuytMIL.png" class = "produto-discount-span-image"/>
+                    ${product.discount}%
+                </span>
             </section>`;
             productNameStyle = "margin-0";
         }
@@ -156,11 +222,11 @@ function addProducts() {
             </section>
             <section class = "produto-rate-section">
                 <div class = "stars-flex">
-                    <img src = "images/icons/img_star(1).png" alt = "star" class = "stars pe-none"/>
-                    <img src = "images/icons/img_star(1).png" alt = "star" class = "stars pe-none"/>
-                    <img src = "images/icons/img_star(1).png" alt = "star" class = "stars pe-none"/>
-                    <img src = "images/icons/img_star(1).png" alt = "star" class = "stars pe-none"/>
-                    <img src = "images/icons/img_star(${Math.floor(Math.random() * 2)}).png" alt = "star" class = "stars pe-none"/>
+                    <img src = "${starsImages[1]}" alt = "star" class = "stars pe-none"/>
+                    <img src = "${starsImages[1]}" alt = "star" class = "stars pe-none"/>
+                    <img src = "${starsImages[1]}" alt = "star" class = "stars pe-none"/>
+                    <img src = "${starsImages[1]}" alt = "star" class = "stars pe-none"/>
+                    <img src = "${starsImages[Math.floor(Math.random() * starsImages.length)]}" alt = "star" class = "stars pe-none"/>
                 </div>
                 <div class = "rating-div">
                     <p class = "rating-texts ta-justify">${product.rating} avaliações</p>

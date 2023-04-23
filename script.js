@@ -18,7 +18,7 @@ function navBar() {
         } else {
             navs[i].className = 'shop-nav open';
             navButtonImg.style.transform = "rotate(0deg)";
-        }
+        };
     }
 };
 

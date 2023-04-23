@@ -166,6 +166,10 @@ button:hover {
     box-shadow: rgba(0, 0, 0, 0.12) 0px 10px 15px;
 }
 
+#search-bar:focus {
+    outline: none;
+}
+
 #search-button {
     background-color: transparent;
     border: 0;
@@ -382,6 +386,69 @@ body {
     gap: 1rem;
 }
 
+/* Resultados da pesquisa */
+.shop-search-results {
+    display: none;
+}
+
+/* Nenhum resultado encontrado */
+.shop-search-results.none {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30rem;
+}
+
+/* Ao menos 1 resultado encontrado */
+.shop-search-results.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+}
+
+/* Div dos resultados encontrados */
+.results-products-div {
+    position: relative;
+    top: 20px;
+    margin: 0 30px;
+}
+
+/* Título de nenhum resultado encontrado */
+#results-title {
+    color: #303030;
+    font-size: 18pt;
+    font-weight: 400;
+    margin: 1rem;
+}
+
+/* Span no título de nenhum resultado encontrado */
+#results-title span {
+    color: #202020;
+    font-weight: 600;
+}
+
+/* Descrição de nenhum resultado encontrado */
+#results-description {
+    color: #404040;
+    font-size: 14pt;
+}
+
+/* Título de produtos encontrados */
+#results-products-found-title {
+    color: #404040;
+    font-size: 18pt;
+    bottom: 20px;
+}
+
+/* Texto de produtos encontrados */
+#results-products-found {
+    color: #404040;
+    font-size: 10pt;
+}
+
 /* Barra de produtos */
 .shop-produto {
     width: 12.5rem;
@@ -498,11 +565,16 @@ body {
 
 /* Span da porcentagem do desconto */
 .produto-discount-spans {
-    background-color: #30a060;
+    background-color: #30c060;
     color: #fff;
     padding: 2px;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 10pt;
+}
+
+/* Imagem do span de porcentagem de desconto */
+.produto-discount-span-image {
+    width: 10px;
 }
 
 /* Section do preço do produto */
@@ -583,9 +655,19 @@ body {
     align-items: center;
 }
 
-/* Logo da Estácio */
-#estacio-logo-image {
-    width: 10rem;
+/* Lista de links do footer (rodapé) */
+.footer-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Itens da lista de links do footer (rodapé) */
+.footer-items {
+    color: #a0a0a0;
 }
 
 /* Texto da logo no rodapé*/
