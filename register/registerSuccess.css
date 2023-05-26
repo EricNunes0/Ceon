@@ -1,0 +1,68 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+p, h1 {
+    text-align: center;
+}
+
+body {
+    background-image: linear-gradient(90deg, rgb(40, 220, 220) 0%, rgb(220, 40, 220) 100%);
+    background-size: cover;
+    margin: 0;
+}
+
+/* Container das informações */
+.reg-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container das informações de cadastro */
+.container-infos-div {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+/* Título do cadastro */
+.reg-title {
+    margin: 20px;
+}
+
+/* Texto de resultado da validação do cadastro */
+.validate-text {
+    margin: 15px 0px;
+}
+
+.validate-text.red {
+    color: #f00;
+}
+
+.validate-text.green {
+    color: #0f0;
+}
+
+/* Div do link para ir à página de login */
+.login-link-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Link para ir à página de login */
+.login-link {
+    text-align: center;
+    text-decoration: none;
+    color: #606060;
+    font-weight: 600;
+    text-decoration: none;
+}

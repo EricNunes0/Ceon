@@ -7,29 +7,29 @@
     margin: 0;
 }
 
-/* Página inteira de login */
-.login-page {
+/* Página inteira de cadastro */
+.register-page {
     background-image: linear-gradient(90deg, rgb(40, 220, 220) 0%, rgb(220, 40, 220) 100%);
     background-size: cover;
     margin: 0;
 }
 
 /* Área de login */
-.login-area {
+.register-area {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 50%;
-    height: 28rem;
     background-color: white;
+    padding: 20px 0;
     border-radius: 10px;
     margin: 1rem auto;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 15px;
 }
 
 /* H2 da página */
-.login-title {
+.register-title {
     color: #303030;
     text-align: center;
     font-size: 28pt;
@@ -38,12 +38,12 @@
 }
 
 /* Linha para separar textos */
-.login-separator {
+.register-separator {
     width: 99%;
 }
 
 /* Descrição da página */
-.login-description {
+.register-description {
     text-align: center;
     font-size: 10pt;
     font-family: var(--font-family-verdana);
@@ -52,7 +52,7 @@
 }
 
 /* Div do formulário de cadastro */
-.login-form-div {
+.register-form-div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -60,7 +60,7 @@
 }
 
 /* Formulário */
-.login-form {
+.register-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,7 +69,16 @@
 }
 
 /* Div do input e label */
-.login-inputs-display {
+.register-inputs-display {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Divs das labels do login */
+.register-label-divs {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -77,48 +86,93 @@
 }
 
 /* Labels do login */
-.login-labels {
+.register-labels {
     color: #606060;
     font-size: 12pt;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Asterisco de campo obrigatório */
-.login-required-span {
+.register-required-span {
     color: #f00;
     font-size: 8pt;
 }
 
+/* Descrição das labels do formulário */
+.register-label-description {
+    color: #606060;
+    font-size: 10pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 100;
+    margin: 5px 0;
+}
+
 /* Divs dos inputs do formulário */
-.login-input-divs {
+.register-input-divs {
     display: flex;
     flex-direction: column;
 }
 
-.login-input-divs span {
+/* Divs dos inputs do formulário para inputs radio */
+.register-input-divs#radio-divs {
+    width: 100%;
+}
+
+/* ALinhar radios e span */
+.radio-options-flex {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Divs das opções do radio */
+.radio-option-divs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Opções de radio */
+.register-inputs-radio {
+    width: 20px;
+    height: 20px;
+    border: 2px solid;
+}
+
+.register-inputs-radio:hover {
+    cursor: pointer;
+}
+
+/* Labels dos campos de radio */
+.radio-labels {
+    color: #606060;
+    font-size: 12pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Span de campos obrigatórios */
+.register-required-spans {
     color: #f00;
     font-size: 8pt;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 10px 0 0 0;
 }
 
-/* "É necessário informar um e-mail!" */
-#login-required-email {
-    display: none;
-}
-
-/* "É necessário informar uma senha!" */
-#login-required-password {
+/* Textos dos campos obrigatórios */
+.register-required-spans {
     display: none;
 }
 
 /* Div do botão de continuar */
-.login-continue-div {
+.register-continue-div {
     width: 100%;
 }
 
-/* Inputs do login */
-.login-inputs {
+/* Inputs do cadastro */
+.register-inputs {
     width: 20rem;
     height: 3rem;
     padding: 0 0.5rem;
@@ -127,7 +181,7 @@
     font-size: 14pt;
 }
 
-.login-inputs:focus {
+.register-inputs:focus {
     outline: none;
     border: 1px solid #3060ff;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 5px;
@@ -183,8 +237,8 @@
     filter: invert(0.1);
 }
 
-/* Pergunta se deseja ir para cadastro */
-.login-register-question {
+/* Pergunta se deseja ir para login */
+.register-login-question {
     color: #808080;
     font-size: 12pt;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -192,14 +246,14 @@
     margin: 0;
 }
 
-.login-register-question a {
+.register-login-question a {
     color: #606060;
     font-weight: 600;
     text-decoration: none;
 }
 
 /* Div do botão de retornar à página principal */
-.login-return-div {
+.register-return-div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -207,7 +261,7 @@
 }
 
 /* Link de voltar à página principal */
-.login-return-link {
+.register-return-link {
     text-decoration: none;
 }
 

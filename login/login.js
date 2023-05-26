@@ -1,6 +1,6 @@
-const submitButton = document.querySelector("#input-submit-button");
+const submitForm = document.getElementById("form");
 
-submitButton.addEventListener("click", function(e) {
+submitForm.addEventListener("submit", function(e) {
     e.preventDefault();
     let email = document.querySelector("#input-email");
     let password = document.querySelector("#input-password");
@@ -20,7 +20,7 @@ submitButton.addEventListener("click", function(e) {
         password.style.border = "1px solid #a0a0a0";
         document.querySelector("#login-required-password").style.display = "none";
     };
-    document.querySelector("#display-login").innerHTML = `E-mail: ${email.value}\nSenha: ${password.value}`;
+    submitForm.submit();
 });
 
 function openPassword() {

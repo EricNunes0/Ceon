@@ -200,13 +200,13 @@ button:hover {
 .cadastro-buttons {
     width: 6rem;
     height: 2.5rem;
-    color: #d0d0d0;
+    color: #fff;
     font-size: 14px;
     font-weight: 600;
     background-color: transparent;
     border-width: 1px;
     border-style: solid;
-    border-color: #808080;
+    border-color: #fff;
     border-radius: 10px;
     transition: all 0.3s;
 }
@@ -335,7 +335,7 @@ button:hover {
 .carrinho-barra {
     width: 15rem;
     height: 70vh;
-    position: fixed;
+    position: absolute;
     background-color: #fff;
     border: 1px solid #d0d0d0;
     writing-mode: horizontal-tb;

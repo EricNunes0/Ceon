@@ -39,12 +39,14 @@
                             <section class = "shop-nav-cadastro-section">
                                 <div class = "cadastro-flex">
                                     <div class = "cadastro-button-div">
-                                        <a href = "login/login.html">
+                                        <a href = "login/login.php">
                                             <button class = "cadastro-buttons">Login</button>
                                         </a>
                                     </div>
                                     <div class = "cadastro-button-div">
-                                        <button class = "cadastro-buttons">Cadastre-se</button>
+                                        <a href = "register/register.php">
+                                            <button class = "cadastro-buttons">Cadastre-se</button>
+                                        </a>
                                     </div>
                                 </div>
                             </section>
@@ -110,7 +112,7 @@
                                         <a href = "index.html" class = "footer-items">Início</a>
                                     </li>
                                     <li>
-                                        <a href = "login/login.html" class = "footer-items">Login</a>
+                                        <a href = "login/login.php" class = "footer-items">Login</a>
                                     </li>
                                 </ul>
                             </div>
