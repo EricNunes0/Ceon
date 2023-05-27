@@ -68,8 +68,21 @@ button:hover {
     left: 1rem;
 }
 
-/* Barra de navegação */
+/* Div da barra de navegação e aba do carrinho */
+.shop-nav-container {
+    width: 100%;
+}
 
+/* Div da barra de navegação e aba do carrinho (menor que 768px) */
+@media screen and (max-width: 768px) {
+    .shop-nav-container {
+        position: fixed;
+        z-index: 1;
+        top: 0;
+    }
+}
+
+/* Barra de navegação */
 .shop-navigation-bar {
     width: 100%;
     height: 90px;
@@ -85,6 +98,13 @@ button:hover {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 15px;
     transition: all 0.3s;
     z-index: 1;
+}
+
+/* Tag nav e barra de navegação (menor que 768px) */
+@media screen and (max-width: 768px) {
+    .shop-navigation-bar, .shop-nav {
+        height: 60px;
+    }
 }
 
 .shop-nav.closed {
@@ -108,6 +128,13 @@ button:hover {
     justify-content: center;
 }
 
+/* Remover logo quando a tela for menor que 768 pixels */
+@media screen and (max-width: 768px) {
+    .shop-nav-image-section {
+        display: none;
+    }
+}
+
 /* Alinhar logo e título */
 .shop-nav-link {
     display: flex;
@@ -125,13 +152,13 @@ button:hover {
 
 /* Texto da logo */
 .logo-text {
+    font-size: 14pt;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 600;
     color: #fff;
 }
 
 /* Barra de pesquisa */
-
 .shop-nav-search-section {
     display: flex;
     flex-direction: row;
@@ -155,9 +182,8 @@ button:hover {
 }
 
 #search-bar {
-    width: 15rem;
-    max-width: 15rem;
-    min-width: 10rem;
+    width: 250px;
+    height: 20px;
     height: 1.2rem;
     text-align: justify;
     padding: 10px 5px;
@@ -183,13 +209,32 @@ button:hover {
     width: 20px;
 }
 
-/* Cadastro */
-.cadastro-flex {
+/* Sessão de cadastro/login */
+.shop-nav-cadastro-section {
+    height: 100%;
+}
+
+/* Remover sessão de cadastro/login quando a tela for menor que 768 pixels */
+@media screen and (max-width: 768px) {
+    .shop-nav-cadastro-section {
+        display: none;
+    }
+}
+
+/* Login não validado */
+.login-not-validated {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 1rem;
+}
+
+/* Remover sessão de cadastro/login quando a tela for menor que 768 pixels */
+@media screen and (max-width: 768px) {
+    .login-not-validated {
+        display: none;
+    }
 }
 
 #cadastro-image {
@@ -207,13 +252,26 @@ button:hover {
     border-width: 1px;
     border-style: solid;
     border-color: #fff;
-    border-radius: 10px;
+    border-radius: 4px;
     transition: all 0.3s;
 }
 
 .cadastro-buttons:hover {
     cursor: pointer;
     filter:invert(0.2);
+}
+
+/* Login validado */
+.login-validated {
+    background-color: transparent;
+}
+
+/* Nome de usuário logado */
+.login-name {
+    font-size: 12pt;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    color: #fff;
 }
 
 /* Div do carrinho */
@@ -265,6 +323,13 @@ button:hover {
     background-image: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(240, 240, 240) 100%);
 }
 
+/* Remover barra de categorias quando a tela for menor que 768 pixels */
+@media screen and (max-width: 768px) {
+    .shop-categories-bar {
+        display: none;
+    }
+}
+
 /* Lista de categorias */
 .shop-categories-list {
     height: 100%;
@@ -310,6 +375,13 @@ button:hover {
     filter: brightness(0.5);
 }
 
+/* Botões ativos dos items da lista de categorias */
+.shop-categories-buttons.on {
+    background-color: rgba(0, 0, 0, 0.05);
+    filter: brightness(0.5);
+    border-bottom: 2px solid;
+}
+
 /* Botão de abrir/fechar a barra de navegação */
 .nav-buttons {
     background-color: rgba(240, 240, 240, 1);
@@ -321,6 +393,13 @@ button:hover {
 
 .nav-buttons:hover {
     cursor: pointer;
+}
+
+/* Remover botão de abrir/fechar barra de navegação quando a tela for menor que 768 pixels */
+@media screen and (max-width: 768px) {
+    .nav-buttons {
+        display: none;
+    }
 }
 
 /* Imagem de seta do botão */
@@ -337,24 +416,83 @@ button:hover {
     height: 70vh;
     position: absolute;
     background-color: #fff;
-    border: 1px solid #d0d0d0;
     writing-mode: horizontal-tb;
     right: 0%;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px;
     transition: all 0.3s;
 }
 
-/* Aba do carrinho aberta */
-.carrinho-barra.open {
-    border-bottom-left-radius: 30px;
-    overflow: auto;
-    z-index: 1;
+/* Aba do carrinho (tela maior que 768 pixels) */
+@media screen and (min-width: 768px){
+    .carrinho-barra.open {
+        border-bottom-left-radius: 10px;
+        overflow: auto;
+        z-index: 1;
+    }
+}
+
+/* Aba do carrinho aberta (tela menor que 768 pixels) */
+@media screen and (max-width: 768px){
+    .carrinho-barra.open {
+        position: fixed;
+        width: 100%;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        overflow: auto;
+        z-index: 1;
+    }
 }
 
 /* Aba do carrinho fechada */
 .carrinho-barra.closed {
-    opacity: 0;
-    right: -20%;
+    display: none;
+}
+
+/* Container do botão de fechar carrinho */
+.carrinho-close-container {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 0;
+    margin: 15px;
+}
+
+/* Container do botão de fechar carrinho (maior que 768px) */
+@media screen and (min-width: 769px) {
+    .carrinho-close-container {
+        display: none;
+    }
+}
+
+/* Botão do container de fechar carrinho */
+.carrinho-close-button {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border-width: 0px;
+}
+
+/* Imagem do botão de fechar carrinho */
+.carrinho-close-image {
+    width: 100%;
+    height: 100%;
+    filter: invert(0.5);
+}
+
+/* Título da aba do carrinho */
+.carrinho-barra-title {
+    font-size: 14pt;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Título da aba do carrinho (menor que 768px) */
+@media screen and (max-width: 768px) {
+    .carrinho-barra-title {
+        font-size: 18pt;
+        margin: 15px 0;
+    }
 }
 
 /* Botão de esvaziar carrinho */
@@ -690,6 +828,10 @@ body {
     background-color: #e0e0e0;
 }
 
+.carrinho-image-div {
+    width: 25%;
+}
+
 /* Imagem do produto no carrinho */
 .carrinho-product-images {
     width: 40px;
@@ -701,6 +843,7 @@ body {
 
 /* Alinhar nome e preço do produto no carrinho */
 .carrinho-texts-flex {
+    width: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
