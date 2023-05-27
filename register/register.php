@@ -3,7 +3,7 @@
     <head>
         <meta charset = "UTF-8">
         <title>CEON - Cadastro</title>
-        <link rel = "icon" href = "https://i.imgur.com/FJ5UhH2.png"/>
+        <link rel = "icon" href = "https://i.imgur.com/s7q3rcU.png"/>
         <link rel = "stylesheet" type = "text/css" href = "register.css"/>
         <link rel = "stylesheet" type = "text/css" href = "../header/header.css"/>
         <script src = "register.js" defer></script>

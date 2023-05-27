@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login concluído</title>
-    <link rel = "icon" href = "https://i.imgur.com/FJ5UhH2.png"/>
+    <link rel = "icon" href = "https://i.imgur.com/s7q3rcU.png"/>
     <link rel = "stylesheet" href = "loginSuccess.css">
     <link rel = "stylesheet" type = "text/css" href = "../header/header.css"/>
 </head>

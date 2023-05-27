@@ -3,7 +3,7 @@
     <head>
         <meta charset = "utf-8"/>
         <title>CEON - Login</title>
-        <link rel = "icon" href = "https://i.imgur.com/FJ5UhH2.png"/>
+        <link rel = "icon" href = "https://i.imgur.com/s7q3rcU.png"/>
         <link rel = "stylesheet" type = "text/css" href = "login.css"/>
         <link rel = "stylesheet" type = "text/css" href = "../header/header.css"/>
         <script src = "login.js" defer></script>
@@ -62,6 +62,5 @@
                 </div>
             </div>
         </div>
-        <!--<h1 id = "display-login"></h1>-->
     </body>
 </html>

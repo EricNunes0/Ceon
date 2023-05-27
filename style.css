@@ -90,12 +90,12 @@ button:hover {
 
 .shop-nav {
     width: 100%;
-    height: 80px;
+    height: 90px;
     background-color: rgb(5, 5, 20);
     position: relative;
     justify-content: center;
     flex-direction: column;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 15px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 15px;
     transition: all 0.3s;
     z-index: 1;
 }
@@ -182,10 +182,10 @@ button:hover {
 }
 
 #search-bar {
-    width: 250px;
+    width: 275px;
     height: 20px;
-    height: 1.2rem;
     text-align: justify;
+    font-size: 12pt;
     padding: 10px 5px;
     border: 0px;
     border-radius: 10px;
@@ -296,7 +296,7 @@ button:hover {
 
 /* Carrinho */
 #carrinho-button {
-    width: 40px;
+    width: 50px;
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -320,7 +320,7 @@ button:hover {
 .shop-categories-bar {
     width: 100%;
     height: 30px;
-    background-image: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(240, 240, 240) 100%);
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(250, 250, 250) 100%);
 }
 
 /* Remover barra de categorias quando a tela for menor que 768 pixels */
@@ -412,7 +412,7 @@ button:hover {
 
 /* Aba do carrinho */
 .carrinho-barra {
-    width: 15rem;
+    width: 20rem;
     height: 70vh;
     position: absolute;
     background-color: #fff;
@@ -481,7 +481,7 @@ button:hover {
 
 /* Título da aba do carrinho */
 .carrinho-barra-title {
-    font-size: 14pt;
+    font-size: 16pt;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
     margin: 10px 0;
@@ -490,18 +490,24 @@ button:hover {
 /* Título da aba do carrinho (menor que 768px) */
 @media screen and (max-width: 768px) {
     .carrinho-barra-title {
-        font-size: 18pt;
+        font-size: 20pt;
         margin: 15px 0;
     }
+}
+
+/* Preço total */
+#total-price {
+    margin: 10px 0;
 }
 
 /* Botão de esvaziar carrinho */
 .carrinho-empty-button {
     height: 30px;
-    width: 80px;
+    width: 120px;
     background-color: transparent;
-    border: 1px solid #f0f0f0;
-    box-shadow: rgba(0, 0, 0, 0.03) 0px 10px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    margin: 5px 0;
     transition: all 0.3s;
 }
 
@@ -764,53 +770,6 @@ body {
 .produto-button:focus:after {
     content: "Adicionado!";
     filter: brightness(0.7);
-}
-
-/* Rodapé (footer) */
-.shop-footer-div {
-    width: 100%;
-    height: 100px;
-    background-image: linear-gradient(135deg, rgba(0, 0, 10, 1) 0%, rgba(0, 0, 20, 1) 100%);
-}
-
-/* Barra do footer */
-.footer-bar {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Alinhar footer */
-.footer-flex {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-/* Lista de links do footer (rodapé) */
-.footer-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
-
-/* Itens da lista de links do footer (rodapé) */
-.footer-items {
-    color: #a0a0a0;
-}
-
-/* Texto da logo no rodapé*/
-#logo-text {
-    color: #fff;
 }
 
 /* CONFIGURAÇÕES DO CARRINHO */

@@ -31,18 +31,6 @@
                 [6] - discount
                 */
                 foreach($products as $product) {
-                    $categoriesNomeSelect_str = "SELECT (nome) FROM categories WHERE id_text = '$product[2]'";
-                    $categoriesNomeSelect = $con->query($categoriesNomeSelect_str);
-                    $categorieNome = $categoriesNomeSelect->fetch();
-
-                    $categoriesBgColorSelect_str = "SELECT (bgcolor) FROM categories WHERE id_text = '$product[2]'";
-                    $categoriesBgColorSelect = $con->query($categoriesBgColorSelect_str);
-                    $categorieBgColor = $categoriesBgColorSelect->fetch();
-
-                    $categoriesIconSelect_str = "SELECT (icon) FROM categories WHERE id_text = '$product[2]'";
-                    $categoriesIconSelect = $con->query($categoriesIconSelect_str);
-                    $categorieIcon = $categoriesIconSelect->fetch();
-
                     $priceValue = $product[4];
                     $discountDiv = "";
                     $productNameStyle = "";
@@ -74,10 +62,7 @@
                                     <h4 class = 'produto-categories' style = 'display: none;'>$product[2]</h4>
                                 </div>
                             </section>
-                            <section class = 'produto-icon-sections' style = 'background-color: $categorieBgColor[0];'>
-                                <p class = 'product-categorie-names' id = 'product-categorie-name-$product[0]}'>$categorieNome[0]</p>
-                                <img src = '$categorieIcon[0]' alt = 'product-categorie-icon' class = 'product-categorie-icons' id = 'product-categorie-icon-$product[0]'></img>
-                            </section>
+                            
                             <section class = 'produto-rate-section'>
                                 <div class = 'stars-flex'>
                                     <img src = '$starsImages[1]' alt = 'star' class = 'stars pe-none'/>

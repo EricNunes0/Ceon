@@ -6,7 +6,8 @@
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <title>CEON</title>
     <link rel = "stylesheet" type = "text/css" href = "style.css"/>
-    <link rel = "icon" href = "https://i.imgur.com/FJ5UhH2.png"/>
+    <link rel = "stylesheet" type = "text/css" href = "footer/footer.css"/>
+    <link rel = "icon" href = "https://i.imgur.com/s7q3rcU.png"/>
     <script type = "text/javascript" src = "script.js"></script>
     <script type = "text/javascript" src = "produtos.js"></script>
     <script type = "text/javascript" src = "search.js" defer></script>
@@ -22,7 +23,7 @@
                             <div class = "shop-nav-flex">
                                 <section class = "shop-nav-image-section">
                                     <a href = "" class = "shop-nav-link">
-                                        <img id = "logo-image" src = "https://i.imgur.com/FJ5UhH2.png" alt = "logo">
+                                        <img id = "logo-image" src = "https://i.imgur.com/s7q3rcU.png" alt = "logo">
                                         <h1 class = "logo-text">CEON</h1>
                                     </a>
                                 </section>
@@ -120,32 +121,7 @@
                     <?php require_once "products.php" ?>
                 </div>
             </div>
-            <div class = "shop-footer-div">
-                <footer class = "footer-bar">
-                    <div class = "footer-flex">
-                        <div class = "footer-links">
-                            <div class = "footer-links-div">
-                                <ul class = "footer-list">
-                                    <li>
-                                        <a href = "index.html" class = "footer-items">Início</a>
-                                    </li>
-                                    <li>
-                                        <a href = "login/login.php" class = "footer-items">Login</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class = "footer-ceon">
-                            <div class = "footer-logo">
-                                <img id = "logo-image" src = "https://i.imgur.com/FJ5UhH2.png">
-                            </div>
-                            <div class = "footer-logotext">
-                                <h3 id = "logo-text">CEON</h3>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-            </div>
+            <?php require_once "footer/footer.php"?>
         </section>
     </div>
 </body>
